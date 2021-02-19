@@ -1,12 +1,14 @@
+This repository is the main project folder that you should open in Webots.
+
 ```
 .
-├── controllers
+├── controllers (submodule)
 ├── libraries
 ├── plugins
 │   ├── physics
 │   ├── remote_controls
 │   └── robot_windows
-├── protos
+├── protos (submodule)
 └── worlds
     └── IDP_L2_v10.wbt
 ```
