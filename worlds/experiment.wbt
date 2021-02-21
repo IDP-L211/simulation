@@ -311,7 +311,7 @@ Robot {
     density -1
     mass 1
   }
-  controller "<extern>"
+  controller "driver"
   linearVelocity -0.061575803816178803 -8.057150858680793e-08 0.003634728333032949
   angularVelocity -3.4842749293080174e-06 -0.2858148192234031 -1.4321027616922836e-05
 }
