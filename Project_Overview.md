@@ -22,6 +22,8 @@ Robot will move in a square spiral shape around the arena to search for the bloc
 
 Once it sees their corresponding block, it will move towards it, collect and return it to it’s area
 
+Need fallback for no block in terms of determing next position to go to
+
 ### Ideas for Final Design
 
 Scoop up all blocks into robot and carry to goal.
@@ -34,11 +36,11 @@ Fine tune any bot strategy parameters with testing.
 
 ## Project Management
 
-Team name!
+Team name: Team Optimal(?)
 
 ### Meetings
 
-Next meeting Sunday, 5:30pm GMT, talk about presentation
+Next meeting Monday, 1:00pm GMT
 
 ### Git
 
@@ -54,15 +56,17 @@ Can only assign 1 person to each task so be specific.
 
 ## Reports / Presentations
 
+### To ask demonstrator
+
+Is infrared sensor laser or led
+
 ---
 
 ## Mechanical - Care, Youjing
 
 ### Tasks
 
-Sketch initial designs
-
-Create webots sample chassis
+Sketch 2 more designs, one being the hook
 
 ### Ideas
 
@@ -96,15 +100,15 @@ Code reviews.
 
 ### Tasks
 
-Figure out API of webots and how it works / what it's capable of.
-
-Code infrastructure / foundations of program that would be independant of high level strategy and low level API.
+Finish motion API
 
 ### Ideas
 
 #### MVP Strategy
 
 Spiral out from start and pick up blocks as it goes along.
+
+Proportional control for wheel speeds using angle and distance error from target.
 
 #### High-level
 
