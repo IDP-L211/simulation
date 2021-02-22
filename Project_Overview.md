@@ -18,11 +18,11 @@ Presentation that details our MVP and also ideas / directions for final design.
 
 Cubic robot that “eats” up the blocks.
 
-Robot will move in a square spiral shape around the arena to search for the blocks
+Robot rotates at start (Or just IR sensor rotates) and maps blocks, go to each block based on coordinates.
 
-Once it sees their corresponding block, it will move towards it, collect and return it to it’s area
+Need fallback for no block in terms of determing next position to go to - rotate robot and look with ultrasonic?
 
-Need fallback for no block in terms of determing next position to go to
+Use a rotating infrared sensor to scan the area. Ultrasonic at the front of robot.
 
 ### Ideas for Final Design
 
@@ -55,6 +55,8 @@ Can only assign 1 person to each task so be specific.
 ---
 
 ## Reports / Presentations
+
+Tuesday 2:00pm presentation, on google slides
 
 ### To ask demonstrator
 
@@ -109,6 +111,12 @@ Finish motion API
 Spiral out from start and pick up blocks as it goes along.
 
 Proportional control for wheel speeds using angle and distance error from target.
+
+#### Beyond MVP
+
+Better control
+
+Move to pose
 
 #### High-level
 
