@@ -4,11 +4,11 @@
 
 ## General Tasks
 
-First 4 webots tutorials.
+Finish webots tutorials
 
-Gantt chart.
+Report
 
-Presentation that details our MVP and also ideas / directions for final design.
+Decide and test sensor strategies
 
 ---
 
@@ -16,31 +16,42 @@ Presentation that details our MVP and also ideas / directions for final design.
 
 ### Minimum Viable Product
 
-Cubic robot that “eats” up the blocks.
+Cubic robot that “eats” up the blocks with a half curve (Proposal 3).
 
-Robot rotates at start (Or just IR sensor rotates) and maps blocks, go to each block based on coordinates.
+Robot goes to nearest block, collects it and then repeats for next block.
+Once all collected go back to goal.
 
-Need fallback for no block in terms of determing next position to go to - rotate robot and look with ultrasonic?
+#### Possible Sensor strategies
 
-Use a rotating infrared sensor to scan the area. Ultrasonic at the front of robot.
+##### Available: Ultrasonic, Long IR, Short IR, 3x Light Sensor
 
-### Ideas for Final Design
+Use a rotating infrared sensor to scan the area. Ultrasonic at the front of robot for distance accuracy.
 
-Scoop up all blocks into robot and carry to goal.
+Use light sensor for close range block detection?
 
-Scan all blocks at start for pathfinding algorithm, update as block positions become clearer. Most blocks should be detectable initially unless they are on the edge of the area. Could update by spinning again after collecting other blocks or by sweeping the edge of the area.
+Long IR and ultrasonic pointing straight with spinning for detecting new targets when we lose current target or need a new one.
+
+### Beyond MVP
+
+Scan all blocks at start for pathfinding algorithm, update as block positions become clearer. 
+Most blocks should be detectable initially unless they are on the edge of the area.
+Could update by spinning again after collecting other blocks or by sweeping the edge of the area.
 
 Fine tune any bot strategy parameters with testing.
+
+More sophisticated control methods
 
 ---
 
 ## Project Management
 
-Team name: Team Optimal(?)
+Team name: Team Optimal
 
 ### Meetings
 
-Next meeting Monday, 1:00pm GMT
+Weekly on Saturday
+
+Next meeting 4:00pm Wednesday to talk about report
 
 ### Git
 
@@ -56,11 +67,13 @@ Can only assign 1 person to each task so be specific.
 
 ## Reports / Presentations
 
-Tuesday 2:00pm presentation, on google slides
+Report due Thursday
 
-### To ask demonstrator
+### To ask on Moodle
 
 Is infrared sensor laser or led
+
+How to model blocks
 
 ---
 
@@ -68,7 +81,7 @@ Is infrared sensor laser or led
 
 ### Tasks
 
-Sketch 2 more designs, one being the hook
+Test different block characteristics
 
 ### Ideas
 
@@ -78,9 +91,13 @@ Sketch 2 more designs, one being the hook
 
 ### Tasks
 
-Analyse sensor data-sheets, collect characteristics for each.
+Analyse colour sensor
 
-Once done, send to the software team so they can simulate sensors.
+More datasheet reading
+
+Implement functions which convert readings into distance & error
+
+Decide on sensor strategy
 
 ### Ideas
 
@@ -88,7 +105,7 @@ Once done, send to the software team so they can simulate sensors.
 
 ## Software - Weixuan, Jason, Ghifari
 
-### Style guide
+#### Style guide
 
 Google style docstrings.
 
@@ -96,35 +113,35 @@ Unit testing?
 
 To do a task: Create a branch, pr to merge back into main with 'WIP' and then link it to a task.
 
+If working on a branch and master gets updated, rebase.
+
 Squash and merge branches.
 
 Code reviews.
 
 ### Tasks
 
-Finish motion API
+Finish merge
+
+Targetting algorithm
+
+Flowcharts for report
 
 ### Ideas
 
 #### MVP Strategy
 
-Spiral out from start and pick up blocks as it goes along.
-
-Proportional control for wheel speeds using angle and distance error from target.
+Motion strategy that maximises forward velocity
 
 #### Beyond MVP
 
-Better control
+Better control - PID?
 
 Move to pose
 
-#### High-level
-
-Determine next block, go to block, position around block.
-
 #### Modules
 
-Driving / Motor - Function that takes a co-ord and goes to it directly, co-ord system?
+Motion Control
 
 Sensor Processing
 
