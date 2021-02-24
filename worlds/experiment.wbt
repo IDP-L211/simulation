@@ -15,11 +15,14 @@ WorldInfo {
         0.01
       ]
     }
+    ContactProperties {
+      material2 "robot"
+    }
   ]
 }
 Viewpoint {
-  orientation 0.33051396750456663 0.9000811714236767 0.28392675487345687 4.5556931387652515
-  position -5.000892669168775 3.4606632788530014 -0.49517899893316164
+  orientation 0.5193770552961805 0.7102531283899747 0.47517151434416005 4.334272531230782
+  position -1.1857644290579052 3.034641699602651 -0.10709765088109668
 }
 Background {
   skyColor [
@@ -31,49 +34,209 @@ Floor {
   appearance Asphalt {
   }
 }
-target {
-  translation -0.639 0.024975475000000004 0.42
-  rotation -0.016204396117765505 0.9891755348723316 -0.1458395651272147 2.630925818835205e-16
-  name "target(9)"
-}
-target {
-  translation 0.977 0.024975475000000004 0.6057
+Solid {
+  translation 0.0013657 0.0249755 0.227424
   rotation -0.10571712175862764 0.9939685053046977 0.02916334393406797 5.847417805433601e-16
-  name "target(8)"
+  children [
+    Transform {
+      translation 0 0.025 0
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 1 0 0
+            roughness 1
+            metalness 0
+            emissiveColor 1 0 0
+          }
+          geometry Sphere {
+            radius 0.0025
+          }
+        }
+        SpotLight {
+          attenuation 0 0 12.47
+          beamWidth 0.2
+          color 1 0 0
+          cutOffAngle 0.6
+          direction 0 1 0
+          intensity 0.01
+          radius 0.5
+        }
+      ]
+    }
+    Solid {
+      children [
+        DEF BOX Shape {
+          appearance PBRAppearance {
+            roughness 1
+            metalness 0
+          }
+          geometry Box {
+            size 0.05 0.05 0.05
+          }
+        }
+      ]
+    }
+  ]
+  name "block"
+  contactMaterial "block"
+  boundingObject USE BOX
+  physics DEF block_mass Physics {
+    density -1
+    mass 0.5
+  }
 }
-target {
-  translation 0.6867 0.024975475000000004 0.5714
+Solid {
+  translation 0.0013657 0.0249755 0.377424
   rotation -0.10571712175862764 0.9939685053046977 0.02916334393406797 5.847417805433601e-16
-  name "target(7)"
+  children [
+    Transform {
+      translation 0 0.025 0
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 1 0 0
+            roughness 1
+            metalness 0
+            emissiveColor 1 0 0
+          }
+          geometry Sphere {
+            radius 0.0025
+          }
+        }
+        SpotLight {
+          attenuation 0 0 12.47
+          beamWidth 0.2
+          color 1 0 0
+          cutOffAngle 0.6
+          direction 0 1 0
+          intensity 0.01
+          radius 0.5
+        }
+      ]
+    }
+    Solid {
+      children [
+        DEF BOX Shape {
+          appearance PBRAppearance {
+            roughness 1
+            metalness 0
+          }
+          geometry Box {
+            size 0.05 0.05 0.05
+          }
+        }
+      ]
+    }
+  ]
+  name "block(1)"
+  contactMaterial "block"
+  boundingObject USE BOX
+  physics DEF block_mass Physics {
+    density -1
+    mass 0.5
+  }
 }
-target {
-  translation 1.0798 0.024975475 -0.2533
-  rotation 0.16179674612872036 0.8967744804020208 0.4118462628722566 1.4492201382898966e-16
-  name "target(6)"
+Solid {
+  translation 0.0013657 0.0249755 0.297424
+  rotation -0.10571712175862764 0.9939685053046977 0.02916334393406797 5.847417805433601e-16
+  children [
+    Transform {
+      translation 0 0.025 0
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 1 0 0
+            roughness 1
+            metalness 0
+            emissiveColor 1 0 0
+          }
+          geometry Sphere {
+            radius 0.0025
+          }
+        }
+        SpotLight {
+          attenuation 0 0 12.47
+          beamWidth 0.2
+          color 1 0 0
+          cutOffAngle 0.6
+          direction 0 1 0
+          intensity 0.01
+          radius 0.5
+        }
+      ]
+    }
+    Solid {
+      children [
+        DEF BOX Shape {
+          appearance PBRAppearance {
+            roughness 1
+            metalness 0
+          }
+          geometry Box {
+            size 0.05 0.05 0.05
+          }
+        }
+      ]
+    }
+  ]
+  name "block(2)"
+  contactMaterial "block"
+  boundingObject USE BOX
+  physics DEF block_mass Physics {
+    density -1
+    mass 0.5
+  }
 }
-target {
-  translation 0.3797688366042708 0.024975475000000004 0.3724416706054075
-  rotation -3.6850022457837276e-17 1 -1.1383050213501675e-17 0.8770524261160295
-  colour 0 1 0
-  name "target(5)"
-}
-target {
-  translation -1.0911 0.024975475 -0.7727
-  rotation 0.027187739186451905 0.997615376597055 -0.0634380580964271 -4.704241553937696e-16
-  colour 0 1 0
-  name "target(1)"
-}
-target {
-  translation 0.8205 0.024975475000000004 0.4842
-  rotation -0.08716996035580256 0.9961619344504159 0.007924541852560103 -5.379814372613734e-16
-  colour 0 1 0
-  name "target(2)"
-}
-target {
-  translation 1.0199 0.024975475000000004 -1.1002
-  rotation -0.7516595996081347 0.3124849260239192 -0.5808278723724994 -6.238970484152511e-17
-  colour 0 1 0
-  name "target(3)"
+Solid {
+  translation 0.0013657 0.0249755 0.167424
+  rotation -0.10571712175862764 0.9939685053046977 0.02916334393406797 5.847417805433601e-16
+  children [
+    Transform {
+      translation 0 0.025 0
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 1 0 0
+            roughness 1
+            metalness 0
+            emissiveColor 1 0 0
+          }
+          geometry Sphere {
+            radius 0.0025
+          }
+        }
+        SpotLight {
+          attenuation 0 0 12.47
+          beamWidth 0.2
+          color 1 0 0
+          cutOffAngle 0.6
+          direction 0 1 0
+          intensity 0.01
+          radius 0.5
+        }
+      ]
+    }
+    Solid {
+      children [
+        DEF BOX Shape {
+          appearance PBRAppearance {
+            roughness 1
+            metalness 0
+          }
+          geometry Box {
+            size 0.05 0.05 0.05
+          }
+        }
+      ]
+    }
+  ]
+  name "block(3)"
+  contactMaterial "block"
+  boundingObject USE BOX
+  physics DEF block_mass Physics {
+    density -1
+    mass 0.5
+  }
 }
 DEF Floor_colour Solid {
   translation 0 0.0001 0.4
@@ -149,8 +312,7 @@ TexturedBackgroundLight {
   texture "empty_office"
 }
 Robot {
-  translation -0.22489645227164576 0.03920094945516683 -0.3636701590082667
-  rotation -0.0063769287004701 -0.9999507024317766 -0.007611010875410823 1.7479964575638762
+  translation 0 0.0384 0
   children [
     DistanceSensor {
       translation 0 0 0.12
@@ -219,12 +381,13 @@ Robot {
       device [
         RotationalMotor {
           name "wheel1"
-          maxTorque 100
+          maxVelocity 20
+          maxTorque 0.4
         }
       ]
       endPoint Solid {
-        translation 0.06000000000005251 -8.131971158399085e-07 0.050000433082926794
-        rotation 0.6674079068382102 -0.6674103586178619 -0.33034845103226357 3.779713983310502
+        translation 0.06000337936308536 -4.273658158544432e-06 0.050001479544765734
+        rotation -0.6698676394072287 0.6695757803600155 0.32085139867275503 2.5193515997294993
         children [
           DEF WHEEL Shape {
             appearance PBRAppearance {
@@ -242,8 +405,6 @@ Robot {
         boundingObject USE WHEEL
         physics Physics {
         }
-        linearVelocity -0.07597630181420084 2.193257384228103e-08 -0.013419957567549169
-        angularVelocity -0.3478420333809331 -0.286510658524471 1.9695104958895313
       }
     }
     DEF WHEEL2 HingeJoint {
@@ -254,12 +415,13 @@ Robot {
       device [
         RotationalMotor {
           name "wheel2"
-          maxTorque 100
+          maxVelocity 20
+          maxTorque 0.4
         }
       ]
       endPoint Solid {
-        translation -0.05999999999986491 8.9965680693241e-07 0.05000024230412242
-        rotation -0.5651530740766907 0.5651551503244598 -0.6010005481889377 4.223899155271772
+        translation -0.06000319490077105 -1.7640146322712802e-06 0.0500019039941027
+        rotation -0.5595885971568035 0.5602562524313363 -0.610715591371037 4.237317519598464
         children [
           USE WHEEL
         ]
@@ -267,8 +429,6 @@ Robot {
         boundingObject USE WHEEL
         physics Physics {
         }
-        linearVelocity -0.04220264764215751 1.7312865946774472e-08 -0.007453346252283722
-        angularVelocity -0.17396466396003177 -0.2859877455608168 0.9847408719499786
       }
     }
     DEF DS_RIGHT DistanceSensor {
@@ -306,12 +466,11 @@ Robot {
       name "ds_left"
     }
   ]
+  contactMaterial "robot"
   boundingObject USE BODY
   physics Physics {
     density -1
     mass 1
   }
-  controller "<extern>"
-  linearVelocity -0.061575803816178803 -8.057150858680793e-08 0.003634728333032949
-  angularVelocity -3.4842749293080174e-06 -0.2858148192234031 -1.4321027616922836e-05
+  controller "foward"
 }
