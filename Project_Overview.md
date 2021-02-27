@@ -31,6 +31,8 @@ Use light sensor for close range block detection?
 
 Long IR and ultrasonic pointing straight with spinning for detecting new targets when we lose current target or need a new one.
 
+Long IR straight forward and 2 ultrasonic sensors pointing away from each other, 10 deg from forward.
+
 ### Beyond MVP
 
 Scan all blocks at start for pathfinding algorithm, update as block positions become clearer. 
@@ -47,11 +49,9 @@ More sophisticated control methods
 
 Team name: Team Optimal
 
+### Reports / Presentations
+
 ### Meetings
-
-Weekly on Saturday
-
-Next meeting 4:00pm Wednesday to talk about report
 
 ### Git
 
@@ -65,23 +65,9 @@ Can only assign 1 person to each task so be specific.
 
 ---
 
-## Reports / Presentations
-
-Report due Thursday
-
-### To ask on Moodle
-
-Is infrared sensor laser or led
-
-How to model blocks
-
----
-
 ## Mechanical - Care, Youjing
 
 ### Tasks
-
-Test different block characteristics
 
 ### Ideas
 
@@ -90,14 +76,6 @@ Test different block characteristics
 ## Electrical - Karl, Eleanor
 
 ### Tasks
-
-Analyse colour sensor
-
-More datasheet reading
-
-Implement functions which convert readings into distance & error
-
-Decide on sensor strategy
 
 ### Ideas
 
@@ -121,23 +99,11 @@ Code reviews.
 
 ### Tasks
 
-Finish merge
+Classifying detections
 
-Targetting algorithm
-
-Flowcharts for report
+Collision Avoidance
 
 ### Ideas
-
-#### MVP Strategy
-
-Motion strategy that maximises forward velocity
-
-#### Beyond MVP
-
-Better control - PID?
-
-Move to pose
 
 #### Modules
 
@@ -150,4 +116,10 @@ GPS
 Strategy
 
 Collision avoidance - 2 levels, general stay away from other bot and then an interrupt to prevent collisions
+
+#### Beyond MVP
+
+Better control - PID?
+
+Move to pose
 
