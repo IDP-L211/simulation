@@ -24,8 +24,8 @@ WorldInfo {
   ]
 }
 Viewpoint {
-  orientation -0.03760487760286017 0.8527732524534817 0.5209257654218923 2.9905051180796116
-  position -0.13013703833257947 1.0395289424469631 0.2712245577399341
+  orientation -0.3206811032691578 -0.8299824823358699 -0.45639096071423596 2.1174444699140365
+  position -0.7270197805408002 1.8027556507070936 0.32759210717584963
 }
 Background {
   skyColor [
@@ -297,52 +297,11 @@ Solid {
 Robot {
   translation -0.03 0.035 0.76
   children [
-    DistanceSensor {
-      translation 0.0225 -0.02 -0.075
-      rotation 0 1 0 1.396
-      name "ultrasonic_right"
-      lookupTable [
-        0 0 0
-        0.1 0.1 0.01667
-        0.2 0.2 0.00833
-        0.3 0.3 0.00556
-        0.4 0.4 0.00417
-        0.5 0.5 0.00333
-        0.6 0.6 0.00278
-        0.7 0.7 0.00238
-        0.8 0.8 0.00208
-        0.9 0.9 0.00185
-        1 1 0.00167
-      ]
-      type "sonar"
-      numberOfRays 20
-      aperture 0.5235987756
-    }
-    DistanceSensor {
-      translation -0.0225 -0.02 -0.075
-      rotation 0 1 0 1.745
-      name "ultrasonic_left"
-      lookupTable [
-        0 0 0
-        0.1 0.1 0.01667
-        0.2 0.2 0.00833
-        0.3 0.3 0.00556
-        0.4 0.4 0.00417
-        0.5 0.5 0.00333
-        0.6 0.6 0.00278
-        0.7 0.7 0.00238
-        0.8 0.8 0.00208
-        0.9 0.9 0.00185
-        1 1 0.00167
-      ]
-      type "sonar"
-      numberOfRays 20
-      aperture 0.5235987756
-    }
     DEF GATE HingeJoint {
       jointParameters HingeJointParameters {
         position 5.616075030873274e-07
-        anchor 0.075 0 -0.075
+        axis -1 0 0
+        anchor -0.075 0 0.075
       }
       device [
         RotationalMotor {
@@ -350,8 +309,8 @@ Robot {
         }
       ]
       endPoint Solid {
-        translation 0.0750009588294496 4.708842760902888e-08 -0.1500020345455299
-        rotation 0.5773472601562878 0.577351611560464 0.5773519358403183 2.0943999998531644
+        translation -0.075 8.42411254630814e-08 0.14999999999995267
+        rotation 0.5773470439332342 0.5773520439336263 0.5773517196884583 2.094399351512359
         children [
           DEF GATE_SHAPE Shape {
             geometry Cylinder {
@@ -370,7 +329,6 @@ Robot {
     }
     DEF RIGHT_WHEEL HingeJoint {
       jointParameters HingeJointParameters {
-        axis -1 0 0
         anchor 0.075 0.015 0
       }
       device [
@@ -379,8 +337,8 @@ Robot {
         }
       ]
       endPoint DEF WHEEL2 Solid {
-        translation 0.08000028038985298 0.015001901849481136 1.0484012255440909e-06
-        rotation -5.733001983023271e-06 6.4596638838632355e-06 -0.9999999999627026 1.5708155238108048
+        translation 0.08 0.015 0
+        rotation 0 0 -0.9999999999999999 1.5707953071795862
         children [
           DEF WHEEL Shape {
             geometry Cylinder {
@@ -398,8 +356,8 @@ Robot {
     DEF BODY Group {
       children [
         DEF FENCE2 Transform {
-          translation 0.0749986 -6.70089e-07 -0.224999
-          rotation -0.5773522691882489 -0.5773502691873165 -0.5773482691863839 2.09439
+          translation -0.075 0 0.225
+          rotation -0.5773479358540498 0.5773509358537164 0.5773519358536053 2.0944
           children [
             DEF SCOOP_2 Shape {
               geometry Extrusion {
@@ -433,8 +391,8 @@ Robot {
           ]
         }
         DEF FENCE1 Transform {
-          translation 0.075 0 0.075
-          rotation -0.577349935856137 -0.5773509358560258 0.577349935856137 -2.094395307179586
+          translation -0.075 0 -0.075
+          rotation 0.5773509358560258 -0.577349935856137 0.577349935856137 2.0944
           children [
             DEF SCOOP_2 Shape {
               geometry Extrusion {
@@ -456,11 +414,11 @@ Robot {
           ]
         }
         DEF SLIPPER Transform {
-          translation 0.175 -0.02 -0.075
+          translation -0.175 -0.02 0.075
           children [
             DEF CASTER Shape {
               geometry Sphere {
-                radius 0.0125
+                radius 0.015
               }
             }
           ]
@@ -474,7 +432,6 @@ Robot {
     }
     DEF LEFT_WHEEL HingeJoint {
       jointParameters HingeJointParameters {
-        axis -1 0 0
         anchor -0.075 0.015 0
       }
       device [
@@ -483,8 +440,8 @@ Robot {
         }
       ]
       endPoint DEF WHEEL1 Solid {
-        translation -0.08000048642236607 0.015001995100980525 -1.0171463713555708e-06
-        rotation -6.399085671071744e-06 5.663144060637943e-06 -0.9999999999634902 1.5707750122514066
+        translation -0.08 0.015 0
+        rotation 0 0 -0.9999999999999999 1.5707953071795862
         children [
           DEF WHEEL Shape {
             geometry Cylinder {
