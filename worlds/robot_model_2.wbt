@@ -24,8 +24,8 @@ WorldInfo {
   ]
 }
 Viewpoint {
-  orientation -0.675309995417491 0.5555362449453959 0.48511430677851297 1.2876928349168502
-  position 0.6994371329978102 2.246070687860128 1.4810341422889746
+  orientation -0.6013248986366548 0.5232502214613423 0.6038357160853215 2.026866415140069
+  position -0.15003382431660586 1.6261700156601027 0.9017676620196033
 }
 Background {
   skyColor [
@@ -36,6 +36,8 @@ Floor {
   size 2.4 2.4
   appearance Asphalt {
   }
+}
+TwoWheelRobot {
 }
 DEF Floor_colour Solid {
   translation 0 0.0001 0.4
@@ -103,54 +105,6 @@ TexturedBackgroundLight {
   texture "empty_office"
 }
 Solid {
-  translation 0 0.05 0.89
-  children [
-    Transform {
-      translation 0 0.025 0
-      children [
-        Shape {
-          appearance PBRAppearance {
-            baseColor 1 0 0
-            roughness 1
-            metalness 0
-            emissiveColor 1 0 0
-          }
-          geometry Sphere {
-            radius 0.0025
-          }
-        }
-        SpotLight {
-          attenuation 0 0 12.47
-          beamWidth 0.2
-          color 1 0 0
-          cutOffAngle 0.6
-          direction 0 1 0
-          intensity 0.01
-          radius 0.5
-        }
-      ]
-    }
-    Solid {
-      children [
-        DEF BOX Shape {
-          appearance PBRAppearance {
-            roughness 1
-            metalness 0
-          }
-          geometry Box {
-            size 0.05 0.05 0.05
-          }
-        }
-      ]
-    }
-  ]
-  name "target(2)"
-  contactMaterial "block"
-  boundingObject USE BOX
-  physics Physics {
-  }
-}
-Solid {
   translation -0.03 0.03 0.61
   children [
     Transform {
@@ -199,7 +153,7 @@ Solid {
   }
 }
 Solid {
-  translation -0.18 0.05 0.79
+  translation -0.17 0.05 0.8
   children [
     Transform {
       translation 0 0.025 0
@@ -247,7 +201,56 @@ Solid {
   }
 }
 Solid {
-  translation -0.16 0.05 0.67
+  translation -0.148787 0.05 0.877781
+  rotation 0 1 0 0.785398
+  children [
+    Transform {
+      translation 0 0.025 0
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 1 0 0
+            roughness 1
+            metalness 0
+            emissiveColor 1 0 0
+          }
+          geometry Sphere {
+            radius 0.0025
+          }
+        }
+        SpotLight {
+          attenuation 0 0 12.47
+          beamWidth 0.2
+          color 1 0 0
+          cutOffAngle 0.6
+          direction 0 1 0
+          intensity 0.01
+          radius 0.5
+        }
+      ]
+    }
+    Solid {
+      children [
+        DEF BOX Shape {
+          appearance PBRAppearance {
+            roughness 1
+            metalness 0
+          }
+          geometry Box {
+            size 0.05 0.05 0.05
+          }
+        }
+      ]
+    }
+  ]
+  name "target(5)"
+  contactMaterial "block"
+  boundingObject USE BOX
+  physics Physics {
+  }
+}
+Solid {
+  translation -0.06 0.05 0.92
   children [
     Transform {
       translation 0 0.025 0
@@ -325,7 +328,7 @@ Robot {
     }
     DistanceSensor {
       translation -0.0225 -0.02 0.075
-      rotation 0 1 0 -1.6823
+      rotation 0 1 0 -1.745
       name "ultrasonic_right"
       lookupTable [
         0 0 0
@@ -346,7 +349,7 @@ Robot {
     }
     DistanceSensor {
       translation 0.0225 -0.02 0.075
-      rotation 0 1 0 -1.333
+      rotation 0 1 0 -1.396
       name "ultrasonic_left"
       lookupTable [
         0 0 0
@@ -377,8 +380,8 @@ Robot {
         }
       ]
       endPoint Solid {
-        translation -0.075 8.42411254630814e-08 0.14999999999995267
-        rotation 0.5773470439332343 0.5773520439336264 0.5773517196884583 2.094399351512359
+        translation -0.07500246096354884 3.880424015642305e-08 0.15000494020643182
+        rotation 0.5773470447011603 0.5773520439594958 0.577351718894669 2.0943993510924956
         children [
           DEF GATE_SHAPE Shape {
             geometry Cylinder {
@@ -388,7 +391,6 @@ Robot {
           }
         ]
         name "solid(2)"
-        boundingObject USE GATE_SHAPE
         physics Physics {
           density -1
           mass 0.01
@@ -397,7 +399,7 @@ Robot {
     }
     DEF RIGHT_WHEEL HingeJoint {
       jointParameters HingeJointParameters {
-        anchor 0.075 0.015 0
+        anchor 0.09 0.015 0
       }
       device [
         RotationalMotor {
@@ -405,8 +407,8 @@ Robot {
         }
       ]
       endPoint DEF WHEEL2 Solid {
-        translation 0.08 0.015 0
-        rotation 0 0 -0.9999999999999999 1.5707953071795862
+        translation 0.09 0.015001 0
+        rotation -3.7861143243286335e-05 -3.026546465724968e-05 0.9999999988252678 4.712381360370644
         children [
           DEF WHEEL Shape {
             geometry Cylinder {
@@ -482,11 +484,11 @@ Robot {
           ]
         }
         DEF SLIPPER Transform {
-          translation -0.175 -0.02 0.075
+          translation -0.175 -0.0175 0.055
           children [
             DEF CASTER Shape {
               geometry Sphere {
-                radius 0.015
+                radius 0.0175
               }
             }
           ]
@@ -500,7 +502,7 @@ Robot {
     }
     DEF LEFT_WHEEL HingeJoint {
       jointParameters HingeJointParameters {
-        anchor -0.075 0.015 0
+        anchor -0.09 0.015 0
       }
       device [
         RotationalMotor {
@@ -508,8 +510,8 @@ Robot {
         }
       ]
       endPoint DEF WHEEL1 Solid {
-        translation -0.08 0.015 0
-        rotation 0 0 -0.9999999999999999 1.5707953071795862
+        translation -0.09000159771559374 0.015000133584730499 1.0597795415029146e-06
+        rotation 3.86551247391617e-05 4.768814104523109e-05 0.9999999981158113 4.7123919405676125
         children [
           DEF WHEEL Shape {
             geometry Cylinder {
@@ -535,6 +537,9 @@ Robot {
   }
   physics Physics {
     density 2000
+    centerOfMass [
+      0 0 0
+    ]
   }
   controller "foward"
 }
