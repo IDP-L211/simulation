@@ -37,8 +37,6 @@ Floor {
   appearance Asphalt {
   }
 }
-TwoWheelRobot {
-}
 DEF Floor_colour Solid {
   translation 0 0.0001 0.4
   children [
@@ -380,8 +378,8 @@ Robot {
         }
       ]
       endPoint Solid {
-        translation -0.07500246096354884 3.880424015642305e-08 0.15000494020643182
-        rotation 0.5773470447011603 0.5773520439594958 0.577351718894669 2.0943993510924956
+        translation -0.07500331043919162 5.7986316944162475e-09 0.15000659910768502
+        rotation 0.5773470444485193 0.577352044030533 0.5773517190762706 2.094399351658308
         children [
           DEF GATE_SHAPE Shape {
             geometry Cylinder {
@@ -391,6 +389,7 @@ Robot {
           }
         ]
         name "solid(2)"
+        boundingObject USE GATE_SHAPE
         physics Physics {
           density -1
           mass 0.01
