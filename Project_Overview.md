@@ -2,46 +2,18 @@
 
 ---
 
-## General Tasks
-
-Finish webots tutorials
-
-Report
-
-Decide and test sensor strategies
-
----
-
 ## Overall Strategy
 
-### Minimum Viable Product
-
-Cubic robot that “eats” up the blocks with a half curve (Proposal 3).
+Cubic robot that “eats” up the blocks into a gated area that drags the blocks around.
 
 Robot goes to nearest block, collects it and then repeats for next block.
 Once all collected go back to goal.
 
-#### Possible Sensor strategies
+Long ranged IR sensor that is used while rotating with DBSCAN to find block positions.
 
-##### Available: Ultrasonic, Long IR, Short IR, 3x Light Sensor
+PID motor control.
 
-Use a rotating infrared sensor to scan the area. Ultrasonic at the front of robot for distance accuracy.
-
-Use light sensor for close range block detection?
-
-Long IR and ultrasonic pointing straight with spinning for detecting new targets when we lose current target or need a new one.
-
-Long IR straight forward and 2 ultrasonic sensors pointing away from each other, 10 deg from forward.
-
-### Beyond MVP
-
-Scan all blocks at start for pathfinding algorithm, update as block positions become clearer. 
-Most blocks should be detectable initially unless they are on the edge of the area.
-Could update by spinning again after collecting other blocks or by sweeping the edge of the area.
-
-Fine tune any bot strategy parameters with testing.
-
-More sophisticated control methods
+Smart target selection to avoid collisions.
 
 ---
 
@@ -51,7 +23,11 @@ Team name: Team Optimal
 
 ### Reports / Presentations
 
+Next presentation tuesday 16/03
+
 ### Meetings
+
+???
 
 ### Git
 
@@ -69,7 +45,9 @@ Can only assign 1 person to each task so be specific.
 
 ### Tasks
 
-### Ideas
+If 0.1 friction is approved then designing a 1:4 gear system and incorporating this into cad.
+
+Helping out with testing and tuning.
 
 ---
 
@@ -77,7 +55,7 @@ Can only assign 1 person to each task so be specific.
 
 ### Tasks
 
-### Ideas
+Helping out with testing and tuning.
 
 ---
 
@@ -87,11 +65,9 @@ Can only assign 1 person to each task so be specific.
 
 Google style docstrings.
 
-Unit testing?
-
 To do a task: Create a branch, pr to merge back into main with 'WIP' and then link it to a task.
 
-If working on a branch and master gets updated, rebase.
+If working on a branch and master gets updated, rebase or merge.
 
 Squash and merge branches.
 
@@ -99,27 +75,8 @@ Code reviews.
 
 ### Tasks
 
-Classifying detections
+Tune PID and action parameters to optimise collection speed and reliability.
 
-Collision Avoidance
+Collect far_blocks.
 
-### Ideas
-
-#### Modules
-
-Motion Control
-
-Sensor Processing
-
-GPS
-
-Strategy
-
-Collision avoidance - 2 levels, general stay away from other bot and then an interrupt to prevent collisions
-
-#### Beyond MVP
-
-Better control - PID?
-
-Move to pose
-
+Test and identify problems with strategy and solve them (to be assisted by other teams)
