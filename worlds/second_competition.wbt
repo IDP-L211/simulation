@@ -1,0 +1,148 @@
+#VRML_SIM R2021a utf8
+WorldInfo {
+  basicTimeStep 4
+  coordinateSystem "NUE"
+  contactProperties [
+    ContactProperties {
+      material2 "slippy"
+      coulombFriction [
+        0
+      ]
+    }
+    ContactProperties {
+      material2 "block"
+      coulombFriction [
+        0.1
+      ]
+    }
+  ]
+}
+Viewpoint {
+  orientation 0.28230886119134896 0.9164972677347029 0.28343335217942844 4.614494916171758
+  position -4.879655510063831 3.4426267572252196 -0.046477543137519256
+}
+Background {
+  skyColor [
+    0.15 0.45 1
+  ]
+}
+Floor {
+  size 2.4 2.4
+  appearance Asphalt {
+  }
+}
+target {
+  translation -0.5242 0.05 -0.144
+  name "target(9)"
+}
+target {
+  translation -1.0665 0.05 -0.2783
+  name "target(8)"
+}
+target {
+  translation -0.9467 0.05 0.624
+  name "target(7)"
+}
+target {
+  translation 0.7601 0.05 0.6937
+  name "target(6)"
+}
+target {
+  translation 0.4578 0.05 -0.7358
+  colour 0 1 0
+  name "target(5)"
+}
+target {
+  translation -0.4298 0.05 -0.0241
+  colour 0 1 0
+  name "target(1)"
+}
+target {
+  translation 1.058 0.05 -0.1279
+  colour 0 1 0
+  name "target(2)"
+}
+target {
+  translation -1.0941 0.05 0.3438
+  colour 0 1 0
+  name "target(3)"
+}
+DEF Floor_colour Solid {
+  translation 0 0.0001 0.4
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 1 0 0
+      }
+      geometry Plane {
+        size 0.4 0.4
+      }
+    }
+  ]
+  name "solid(6)"
+}
+DEF Floor_colour Solid {
+  translation 0 0.0001 -0.4
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0 1 0
+      }
+      geometry Plane {
+        size 0.4 0.4
+      }
+    }
+  ]
+  name "solid(5)"
+}
+DEF WALL_1 Solid {
+  translation 1.2 0.05 0
+  children [
+    DEF WALL_SHAPE Shape {
+      appearance PBRAppearance {
+        baseColor 0 0.333333 0
+        roughness 1
+        metalness 0
+      }
+      geometry Box {
+        size 0.02 0.1 2.38
+      }
+    }
+  ]
+  boundingObject USE WALL_SHAPE
+}
+DEF WALL_2 Solid {
+  translation -1.2 0.05 0
+  children [
+    USE WALL_SHAPE
+  ]
+  name "solid(1)"
+  boundingObject USE WALL_SHAPE
+}
+DEF WALL_3 Solid {
+  translation 0 0.05 -1.2
+  rotation 0 1 0 1.5708
+  children [
+    USE WALL_SHAPE
+  ]
+  name "solid(2)"
+  boundingObject USE WALL_SHAPE
+}
+DEF WALL_4 Solid {
+  translation 0 0.05 1.2
+  rotation 0 1 0 1.5708
+  children [
+    USE WALL_SHAPE
+  ]
+  name "solid(3)"
+  boundingObject USE WALL_SHAPE
+}
+TexturedBackgroundLight {
+  texture "empty_office"
+}
+red {
+  translation 0.00699954 0.035 0.350769
+}
+green {
+  translation 0.0144796 0.035 -0.466562
+}
